@@ -1,0 +1,6 @@
+# robots.txt — disallow all crawlers
+# This tells well-behaved bots not to crawl or index any pages.
+# Note: this is advisory only; use server access control for absolute privacy.
+
+User-agent: *
+Disallow: /
