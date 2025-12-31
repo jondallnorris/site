@@ -12,3 +12,5 @@ tmp/
 *.DS_Store
 screenrec-*.gif
 screenshot-*.png
+aux
+

@@ -1,0 +1,77 @@
+/* Photo Gallery */
+.gallery {
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+ 
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.gallery figure {
+  /* container-type: inline-size; */
+  container: figure / inline-size;
+  overflow: hidden;
+  display: grid;
+  aspect-ratio: 9 / 16;
+  max-width: 250px;
+  background-color: var(--background-color);
+  padding: 0px;
+  margin:4px;
+  border-width: 2px;
+  border-color:  var(--selection-color);
+  border-style: solid;
+  user-select: none;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: minmax(0, 1fr);
+}
+
+.gallery img {
+  inline-size: 100%;
+  block-size: 100%;
+  z-index: 2;
+  grid-area: 1 / 1;
+  background-color: transparent;
+}
+
+
+.gallery figcaption {
+  grid-area: 1 / 1;
+  margin: 10px;
+  text-decoration: none;
+}
+
+.gallery figcaption h3 {
+  position: relative;
+  color: var(--selection-text);
+  background-color: var(--base-color); 
+  text-align: center;
+  z-index: 4;
+  margin:0;
+}
+
+.gallery figcaption p {
+  overflow: hidden;
+  opacity: 0%;
+  white-space: wrap;
+  text-overflow: ellipsis;
+}
+
+.gallery figure:hover a img {opacity: 25%;}
+.gallery figure:hover {
+    //border-color: #00CCFF;
+    border-style: dashed;
+}
+
+
+.gallery figure:hover figcaption p {
+    opacity: 100%;
+}
+
+.gallery figure:hover figcaption h3 {
+  background-color: transparent;
+  color: var(--base-color);
+  text-align: start;
+  text-decoration: underline;
+}

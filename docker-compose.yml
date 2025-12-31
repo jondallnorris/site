@@ -14,7 +14,7 @@ services:
       - JEKYLL_ENV=development
     volumes:
       - .:/srv/jekyll
-      - bundle:/usr/local/bundle
+      - /Users/jnorris/.rbenv/shims/bundle
 
 volumes:
   bundle:

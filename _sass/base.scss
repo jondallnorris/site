@@ -14,34 +14,73 @@ $container-max-width:  600px !default;
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1, h2, h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
+h1 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px; margin-bottom: 22px; font-weight: bold; text-decoration: underline; color: var(--text-color); }
+h2, h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
 p, ul, ol { margin: 0px;  color: var(--text-color); }
 a { text-decoration: underline;  color: var(--link-color); }
-a:hover { color: var(--background-color); background-color: var(--base-color); }
+p a:hover { color: var(--background-color); background-color: var(--base-color); }
+a img:hover  {background-color: transparent;}
 @media only screen and (max-device-width: 500px) { * { font-size: $mobile-font-size !important; } }
+
+// .boring_link a {text-decoration: none;  color: peru; }
+// .boring_link:hover {color: var(--text-color); background-color: transparent; all:unset}
+// .boring_link {width:100%; height:100%;background-color: peru;}
+// .boring_link:hover {all:unset}
+
 
 /**
  * Images
  */
 .right_float {
-float: right;    
- margin: 0 0 0 15px;
+ float: right;    
+ margin: 0 15px 0 15px;
 }
 .left_float {
 float: left;
-margin: 0 15px 0 0;    
+margin: 0 15px 0 15px;    
 }
 
 /**
  * Layout
  */
-.container { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto} 
-            //background-color: var(--background-color)}
+.container { width: $container-width;  max-width: $container-max-width;  margin-right: auto;  margin-left: auto; background-color: none}
 p { word-wrap: break-word;  word-break: break-word;  white-space: pre-wrap; margin-bottom: 15px; }
 footer { color: var(--text-color);  border-top: var(--border);  margin: 20px auto 15px;  padding-top: 10px;  text-align: right; }
 header { margin-top: 25px;  margin-bottom: 10px; }
 header p { text-align: left;  margin: 0; }
 footer { margin-bottom: 20px; }
+
+figure {
+  padding: 10px;            
+  margin: 20px auto;        
+  max-width: 100%;         
+  text-align: left;       
+}
+
+figure img {
+  max-width: 100%;         
+  height: auto;            
+}
+
+figure figcaption {
+  font-style: italic
+}
+
+iframe {
+  padding: 10px;            
+  margin: 20px auto;        
+  width: 100%;         
+  text-align: left;  
+}
+
+.portrait-frame {
+  aspect-ratio: 9 / 16;
+}
+
+.landscape-frame {
+  aspect-ratio: 16 / 11;
+}
+
 
 /**
  * Highlight/Markup
@@ -59,7 +98,8 @@ footer { margin-bottom: 20px; }
 /**
  * Header/Navigation
  */
-.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; }
+
+.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; user-select: None;}
 .menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
 .menu ul li { display: inline;  margin-left: 10px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
@@ -145,88 +185,5 @@ pre { background-color: var(--background-color);  border: none;  padding: 0;  ma
 .highlight .il { color: var(--code-color-14); } /* Literal.Number.Integer.Long */
 
 
-// /* In your main.scss or _sass file */
-
-// .ascii-wave-container {
-//   width: 100%;
-//   height: 100px; /* Adjust based on preference */
-//   overflow: hidden;
-//   background-color: #000033;
-//   position: relative;
-//   /* Optional: keeps it behind text if used as a header background */
-//   z-index: 0; 
-// }
-
-// .ascii-wave {
-//   position: absolute;
-//   top: 50%;
-//   left: 0;
-//   width: 100%;
-//   height: 100%;
-//   transform: translateY(-50%);
-// }
-
-// .ascii-wave::after {
-//   white-space: pre;
-//   font-family: 'Courier New', monospace;
-//   font-size: 20px;
-//   font-weight: bold;
-//   color: #00CCFF;
-//   display: block;
-//   position: absolute;
-//   left: 0;
-//   animation: slideWaves 20s linear infinite;
-// }
-
-// @keyframes slideWaves {
-//   0% { transform: translateX(0); }
-//   /* Ensure this pixel value roughly matches the repeat pattern length for a smooth loop */
-//   100% { transform: translateX(-500px); } 
-// }
-
-/* Container for the effect */
-.ascii-wave-container {
-  width: 100vw;
-  height: 100vh; /* Adjust height as needed */
-  position: fixed;
-  z-index: -1;
-  pointer-events: none;
-  overflow: hidden;
-  background-color: var(--background-color);
-}
-
-/* The element that holds the ASCII characters and is animated */
-.ascii-wave {
-  /* The "wave" characters, repeated to fill the space */
-  /* Using ::before to hold the content is often cleaner, but for simplicity, we'll put it directly on the div and give it an explicit 'content' property to make it visible */
-  white-space: pre; /* Important: Preserves the whitespace and line breaks */
-  font-family: 'Courier New', monospace; /* Monospaced font is critical for ASCII art */
-  font-size: 16px;
-  color: #00CCFF; /* Bright blue color for the waves */
-  position: absolute;
-  top: 50%;
-  left: 0;
-  transform: translateY(-50%); /* Center the text vertically */
-  transform: translateX(50%); 
-  /* This width is set large enough to contain the content string and allow it to slide without showing a gap */
-  width: 100%; 
-  height: 100%;
-  animation: slideWaves 10s linear infinite;
-}
-
-/* Keyframes for the animation */
-@keyframes slideWaves {
-    0% {
-    transform: translate3d(-710.94px, -50%, 0); /* Start position */
-  }
-//       100% {
-//     transform: translate3d(-711px, -50%, 0); /* Start position */
-//   }
-//     0% {
-//     transform: translate3d(0, -50%, 0); /* Start position */
-//   }
-  100% {
-    /* Slide the waves to the left by the width of the pattern (approx 1000px, but use a safe value) */
-    transform: translate3d(0, -50%, 0); 
-  }
-}
+@import "animations";
+@import "gallery";

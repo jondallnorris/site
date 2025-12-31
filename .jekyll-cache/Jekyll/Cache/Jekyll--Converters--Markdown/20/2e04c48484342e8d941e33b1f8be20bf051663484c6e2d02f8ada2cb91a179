@@ -1,0 +1,13 @@
+I"d<h1 id="projects">Projects</h1>
+
+<div class="gallery"><figure>
+                <a href="/deepice"><img src="/assets/media/deepice_card.png" />
+                </a>
+                <figcaption>
+                    <h3>Deep Learning Lake Ice Model</h3>
+                    <p> <i>status:</i> active</p>
+                    <p>A deep learning model for the historical reconstruction of ice cover in the great lakes. Uses historical air temperature data to produce hindcasts from 1897 to 2023. Developed during my summer 2025 fellowship at CIGLR/UMich.</p>
+                </figcaption>
+            </figure></div>
+
+:ET

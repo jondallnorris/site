@@ -3,8 +3,19 @@
 header_pages:
   - index.md
   - about.md
+  - projects.md
 
 footer: '<em>what the monkey considers business, the horse considers play</em>'
+
+# collections
+# collections:
+#   - projects
+
+collections:
+  projects:
+    output: true
+  diners:
+  
 
 plugins:
   - jekyll-seo-tag

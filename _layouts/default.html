@@ -28,7 +28,13 @@ script-src 'self';
 
   <body>
 
-    {%- include ascii-wave.html -%}
+    {%- if page.bg_style == "wave" -%}
+      {%- include ascii-wave.html -%}
+    {%- elsif page.bg_style == "ice" -%}
+      {%- include ascii-ice.html -%}
+    {%- elsif page.bg_style == "graph" -%}
+      {%- include graph-paper.html -%}
+    {%- endif -%}
 
     <div class="container">
 
