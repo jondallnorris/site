@@ -1,8 +1,11 @@
 *.gem
 .bundle
-.sass-cache
-_site
 Gemfile.lock
 .DS_Store
 aux
-.jekyll-cache
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+.dockerignore
+dockercompose.yml
